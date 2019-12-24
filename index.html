@@ -1,18 +1,756 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-body
-{
-Background-color:red;
-}	
-</style>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lector Dashboard</title>
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+    <!-- main-wrapper -->
+    <section id="wrapper" class="d-flex flex-column h-100">
+        <!-- header -->
+        <header id="top-header">
+            <nav class="navbar navbar-expand navbar-light bg-white p-0">
+                <div class="navbar-brand bg-light justify-content-center d-flex align-items-center mr-0">
+                    <span class="fa fa-check-circle fa-lg text-warning pr-1"></span>
+                    <h4 class="text-white d-none d-xl-block"> Lector. </h4>
+                </div>
+                <label class="fa fa-bars fa-lg sidebar-toggler text-secondary pl-3" for="sidebar-toggler"></label>
+                <div class="ml-auto pr-3">
+                    <ul class="navbar-nav">
+                        <li class="nav-item pr-3">
+                            <div class="notification-badge-blue icon-cursor position-relative">
+                                <span class="fa fa-bell fa-lg text-secondary"></span>
+                            </div>
+                        </li>
+                        <li class="nav-item pr-3">
+                            <div class="notification-badge-pink icon-cursor position-relative">
+                                <span class="fa fa-envelope fa-lg text-secondary"></span>
+                            </div>
+                        </li>
+                        <li class="nav-item pr-4">
+                            <div class="position-relative">
+                                <img src="assets/images/user-profile.png" class="rounded-circle">
+                            </div>
+                        </li>
+                        <li class="nav-item avatar dropdown">
+                            <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-cog fa-lg text-secondary"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-secondary"
+                                aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item text-secondary" href="#">User Account</a>
+                                <a class="dropdown-item text-secondary" href="#">Login</a>
+                                <a class="dropdown-item text-secondary" href="#">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- header end-->
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+        <!-- content-wrapper -->
+        <section id="content-wrapper" class="d-flex h-100">
+            <!-- start: sidebar -->
+            <input type="checkbox" name="sidebar-toggler" id="sidebar-toggler">
+            <aside id="primary-nav" class="h-100 d-flex flex-column bg-white">
+                <nav role="tablist" aria-orientation="vertical" class="h-100 overflow-auto scrollbar custom-scrollbar">
+                    <div class="d-flex flex-column pt-4 nav">
+                        <a class="nav-link nav-menu-item active" id="v-pills-dashboard-tab" data-toggle="pill"
+                            href="#v-pills-dashboard" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
+                            <span class="nav-icon fa fa-th-large"></span>
+                            <span class="nav-list-item ml-3 mr-auto">Dashboard</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" id="v-pills-profile-tab" data-toggle="pill"
+                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                            <span class="nav-icon fa fa-user-circle-o"></span>
+                            <span class="nav-list-item ml-3 mr-auto">Widgets</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" id="v-pills-librabry-tab" data-toggle="pill"
+                            href="#v-pills-librabry" role="tab" aria-controls="v-pills-librabry" aria-selected="false">
+                            <span class="nav-icon fa fa-book"></span>
+                            <span class="nav-list-item ml-3 mr-auto">Page Layout</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" id="v-pills-shortlist-tab" data-toggle="pill"
+                            href="#v-pills-shortlist" role="tab" aria-controls="v-pills-shortlist"
+                            aria-selected="false">
+                            <span class="nav-icon fa fa-align-right"></span>
+                            <span class="nav-list-item ml-3 mr-auto">Sider Layouts</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">basic ui elements</span>
 
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">advancved elements</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">form elements</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">editors</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">charts</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">tables</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">popups</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">notifications</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">icons</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">maps</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">user pages</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">error pages</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">general pages</span>
+
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">e-commerce</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">e-mail</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">calendar</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">gallery</span>
+                        </a>
+                        <a class="nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                            id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                            <span class="nav-icon fa fa-envelope"></span>
+                            <span class="nav-list-item ml-3 mr-auto ">documentation</span>
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+            <!-- end: sidebar -->
+
+            <!-- content-body -->
+            <main id="content-body" class="h-100 w-100 overflow-auto pb-4 px-4">
+                <!-- overview of latest month -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mt-4">
+                        <div class="card shadow border-0 h-100">
+                            <div class="card-body pb-0">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                        <div class="row no-gutters flex-column pb-5 justify-content-center">
+                                            <h6 class="text-dark font-weight-bold">Dashboard</h6>
+                                            <small class="text-secondary pt-1">Overview of latest Month</small>
+                                        </div>
+                                        <div class="row no-gutters flex-column pb-5">
+                                            <h3 class="text-dark font-weight-bold">$3468.96</h3>
+                                            <small class="text-secondary pt-1">Current Month earnings</small>
+                                        </div>
+                                        <div class="row no-gutters flex-column pb-5">
+                                            <h3 class="text-dark font-weight-bold">82</h3>
+                                            <small class="text-secondary pt-1">Current Month Sales</small>
+                                        </div>
+                                        <div class="row no-gutters w-50 flex-column pb-3">
+                                            <button type="button" class="btn btn-danger">Add</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link pt-0 text-secondary" id="pills-daily-tab"
+                                                    data-toggle="pill" href="#pills-daily" role="tab"
+                                                    aria-controls="pills-daily" aria-selected="true">DAILY</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link pt-0 text-secondary" id="pills-weekly-tab"
+                                                    data-toggle="pill" href="#pills-weekly" role="tab"
+                                                    aria-controls="pills-weekly" aria-selected="false">WEEKLY</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link pt-0 text-secondary active" id="pills-monthly-tab"
+                                                    data-toggle="pill" href="#pills-monthly" role="tab"
+                                                    aria-controls="pills-monthly" aria-selected="false">MONTHLY</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link pt-0 text-secondary" id="pills-yearly-tab"
+                                                    data-toggle="pill" href="#pills-yearly" role="tab"
+                                                    aria-controls="pills-yearly" aria-selected="false">YEARLY</a>
+                                            </li>
+                                            <li class="nav-item ml-auto">
+                                                <ul class="nav nav-pills my-3 my-md-0 my-lg-2">
+                                                    <li class="nav-item">
+                                                        <small class="nav-link pt-0 text-secondary">
+                                                            <span class="fa fa-circle text-primary pr-1"></span>Online
+                                                        </small>
+
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <small class="nav-link pt-0 text-secondary">
+                                                            <span class="fa fa-circle text-warning pr-1"></span>Store
+                                                        </small>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-daily" role="tabpanel"
+                                                aria-labelledby="pills-daily-tab">
+                                                <div class="row">
+                                                    <img src="assets/images/chart1.png" class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-weekly" role="tabpanel"
+                                                aria-labelledby="pills-weekly-tab">
+                                                <div class="row">
+                                                    <img src="assets/images/chart1.png" class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-monthly" role="tabpanel"
+                                                aria-labelledby="pills-monthly-tab">
+                                                <div class="row">
+                                                    <img src="assets/images/chart1.png" class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-yearly" role="tabpanel"
+                                                aria-labelledby="pills-yearly-tab">
+                                                <div class="row">
+                                                    <img src="assets/images/chart1.png" class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row border-bottom"></div>
+                                <div class="row">
+                                    <div
+                                        class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 d-flex justify-content-center align-items-center border-right py-4 px-1 px-lg-2">
+                                        <div class="pr-2">
+                                            <div
+                                                class="d-flex justify-content-center align-items-center p-3 bg-icon-danger rounded-circle">
+                                                <span class="fa fa-heart" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-column">
+                                            <h6 class="text-secondary pb-2">Wallet Ballance</h6>
+                                            <h6 class="text-dark font-weight-bold">$4,567.53</h6>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 d-flex justify-content-center align-items-center border-right py-4 px-1 px-lg-2">
+                                        <div class="pr-2">
+                                            <div
+                                                class="d-flex justify-content-center align-items-center p-3 bg-icon-purple rounded-circle">
+                                                <span class="fa fa-heart" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-column">
+                                            <h6 class="text-secondary pb-2">Wallet Ballance</h6>
+                                            <h6 class="text-dark font-weight-bold">$4,567.53</h6>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 d-flex justify-content-center align-items-center border-right py-4 px-1 px-lg-2">
+                                        <div class="pr-2">
+                                            <div
+                                                class="d-flex justify-content-center align-items-center p-3 bg-icon-primary rounded-circle">
+                                                <span class="fa fa-heart" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-column">
+                                            <h6 class="text-secondary pb-2">Wallet Ballance</h6>
+                                            <h6 class="text-dark font-weight-bold">$4,567.53</h6>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 d-flex justify-content-center align-items-center py-4 px-1 px-lg-2">
+                                        <div class="pr-2">
+                                            <div
+                                                class="d-flex justify-content-center align-items-center p-3 bg-icon-warning rounded-circle">
+                                                <span class="fa fa-heart" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-column">
+                                            <h6 class="text-secondary pb-2">Wallet Ballance</h6>
+                                            <h6 class="text-dark font-weight-bold">$4,567.53</h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 mt-4">
+                        <div class="card shadow border-0 h-100">
+                            <div class="card-body d-flex flex-column justify-content-between h-100 pb-0">
+                                <div class="d-flex">
+                                    <h6 class="text-dark font-weight-bold">Traffic</h6>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <img src="assets/images/chart5.png" class="img-fluid">
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="flex-column py-4 align-items-center d-flex">
+                                        <h4 class="text-dark white-space-nowrap font-weight-bold">33%</h4>
+                                        <small class="text-secondary white-space-nowrap">
+                                            <span class="fa fa-circle text-purple"></span>
+                                            youtube
+                                        </small>
+                                    </div>
+                                    <div class="flex-column py-4 align-items-center d-flex">
+                                        <h4 class="text-dark white-space-nowrap font-weight-bold">63%</h4>
+                                        <small class="text-secondary white-space-nowrap">
+                                            <span class="fa fa-circle text-danger"></span>
+                                            instagarm
+                                        </small>
+                                    </div>
+                                    <div class="flex-column py-4 align-items-center d-flex">
+                                        <h4 class="text-dark white-space-nowrap font-weight-bold">45%</h4>
+                                        <small class="text-secondary white-space-nowrap">
+                                            <span class="fa fa-circle text-warning"></span>
+                                            facebook
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- revenue -->
+                <div class="row">
+                    <div class="col-12 col-md-6 mt-4">
+                        <div class="card shadow border-0 bg-gradient-danger card-border-radius h-100">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="d-flex">
+                                    <h6 class="text-white font-weight-normal">Revinue Status</h6>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <img src="assets/images/chart2.png" class="pt-2">
+                                    <div class="d-flex flex-column align-items-end justify-content-end">
+                                        <h5 class="text-white mb-0">$ 432</h5>
+                                        <small class="text-white text-nowrap">jan 01 - jan 10</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-4">
+                        <div class="card shadow border-0 bg-gradient-purple card-border-radius h-100">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex flex-column">
+                                    <h6 class="text-white font-weight-normal">Page View</h6>
+                                    <h5 class="text-white py-2">$ 432</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <img src="assets/images/chart6.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-4">
+                        <div class="card shadow border-0 bg-gradient-primary card-border-radius h-100">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="d-flex flex-column">
+                                    <h6 class="text-white font-weight-normal mb-0">Bounce Rate</h6>
+                                    <h5 class="text-white py-2">$ 432</h5>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div class="btn-group mr-2">
+                                        <button type="button" class="btn btn-light dropdown-toggle text-dark"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Monthly
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Yearly</a>
+                                            <a class="dropdown-item" href="#">Weekly</a>
+                                            <a class="dropdown-item" href="#">Daily</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-end justify-content-end">
+                                        <img src="assets/images/chart3.png" class="img-fluid" alt="Chart 4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-4">
+                        <div class="card shadow border-0 bg-gradient-warning card-border-radius h-100">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="d-flex">
+                                    <h6 class="text-white font-weight-normal">Revinue Status</h6>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <img src="assets/images/chart2.png" class="pt-2">
+                                    <div class="d-flex flex-column align-items-end justify-content-end">
+                                        <h5 class="text-white mb-0">$ 635</h5>
+                                        <small class="text-white text-nowrap">feb 01 - march 10</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline & Table -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 mt-4">
+                        <div class="card shadow border-0 h-100">
+                            <div class="card-body pb-0">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <h6 class="text-dark font-weight-bold pb-5">Recent Activities</h6>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">4 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-purple
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">7 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-danger
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">8 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-primary
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">5 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-warning
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">2 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-success
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">1 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-purple
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between pb-4">
+                                    <div>
+                                        <span class="text-secondary white-space-nowrap">3 Mins
+                                            ago</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bg-icon-primary
+                                        rounded-circle p-3 mx-2 mx-md-0">
+                                        <span class="fa fa-heart" aria-hidden="true"></span>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-dark font-weight-bold">Task Updated</h6>
+                                        <small class="text-dark pr-1">Nikolai</small>
+                                        <small class="text-secondary">Updated a Task</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mt-4">
+                        <div class="card shadow border-0 h-100">
+                            <div class="card-body pb-4">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <h6 class="text-dark font-weight-bold pb-2">Order Status</h6>
+                                        <small class="text-secondary pb-2">Overview of last month</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 pt-3">
+                                        <div class="d-flex flex-wrap flex-md-nowrap">
+                                            <div class="pr-2 pb-3">
+                                                <button type="button" class="btn btn-danger rounded">
+                                                    <span class="fa fa-plus-circle text-black pr-2"></span>Add</button>
+                                            </div>
+                                            <div class="pr-2">
+                                                <div class="btn-toolbar" role="toolbar"
+                                                    aria-label="Toolbar with button groups">
+                                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                                        <button type="button" class="btn btn-light px-4">
+                                                            <span class="fa fa-exclamation-circle text-secondary"
+                                                                aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                                                        <button type="button" class="btn btn-light px-4">
+                                                            <span class="fa fa-trash text-secondary"
+                                                                aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="btn-group" role="group" aria-label="Third group">
+                                                        <button type="button" class="btn btn-light px-4">
+                                                            <span class="fa fa-print text-secondary"
+                                                                aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 pt-3">
+                                        <div class="d-flex pl-xl-4">
+                                            <div class="pr-2 search-group">
+                                                <input type="search" name="search-input"
+                                                    class="form-control search border-0 bg-light rounded-none text-secondary"
+                                                    id="search-input" aria-describedby="emailHelp" placeholder="Search">
+
+                                            </div>
+                                            <div class="pr-2">
+                                                <div class="btn-group" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-light px-4">
+                                                        <span class="fa fa-print text-secondary"
+                                                            aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters table-responsive mt-3">
+                                    <table class="table data-table">
+                                        <thead class="thead-dark rounded">
+                                            <tr>
+                                                <th class="border-0 font-weight-normal thead-border-left-radius">
+                                                    Invoice</th>
+                                                <th class="border-0 font-weight-normal">Customer</th>
+                                                <th class="border-0 font-weight-normal">Ship</th>
+                                                <th class="border-0 font-weight-normal">Best Price</th>
+                                                <th class="border-0 font-weight-normal">Purchase Price</th>
+                                                <th class="border-0 font-weight-normal thead-border-right-radius">
+                                                    Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>@mdo</td>
+                                                <!-- <td><button type="button" class="btn btn-sucess">Progress</button></td> -->
+                                                <td><button class="btn btn-danger" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                                <td>@fat</td>
+                                                <!-- <td><button type="button" class="btn btn-sucess">Open</button></td> -->
+                                                <td><button class="btn bg-purple text-white"
+                                                        type="submit">Progress</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                                <td>@twitter</td>
+                                                <!-- <td><button type="button" class="btn btn-sucess">On Hold</button></td> -->
+                                                <td><button class="btn btn-primary" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                                <td>@twitter</td>
+                                                <td><button class="btn btn-warning" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                                <td>@twitter</td>
+                                                <td><button class="btn btn-success" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="d-flex flex-wrap justify-content-center align-items-center">
+                                    <div class="mr-md-auto">
+                                        <h6 class="text-secondary font-weight-bold mb-0">Showing 1 to 20 of 20 entries
+                                        </h6>
+                                    </div>
+                                    <div class="py-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination mb-0">
+                                                <li class="page-item">
+                                                    <a class="page-link text-dark border-0 rounded-circle" href="#"
+                                                        aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"><a
+                                                        class="page-link border-0 rounded-circle text-white btn-danger mx-1"
+                                                        href="#">1</a></li>
+                                                <li class="page-item"><a
+                                                        class="page-link border-0 rounded-circle text-dark mx-1"
+                                                        href="#">2</a>
+                                                </li>
+                                                <li class="page-item"><a
+                                                        class="page-link border-0 rounded-circle text-dark mx-1"
+                                                        href="#">3</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link text-dark rounded-circle border-0 mx-1" href="#"
+                                                        aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- end: content-body -->
+        </section>
+        <!-- ends: content-wrapper -->
+    </section>
+    <!-- ends: main-wrapper -->
+
+    <!-- Javascript -->
+    <script src="./assets/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
